@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'echo "Multiline works ok too" && ls -lah'
+        sh 'tidy -q -e index.html'
       }
     }
 

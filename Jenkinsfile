@@ -7,5 +7,11 @@ pipeline {
       }
     }
 
+    stage('Upload to AWS') {
+      steps {
+        s3Upload(bucket: 'cmdeploywebinfra', pathStyleAccessEnabled: true, payloadSigningEnabled: true, file: 'index.html')
+      }
+    }
+
   }
 }
